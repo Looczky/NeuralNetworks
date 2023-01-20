@@ -12,7 +12,7 @@ public class Matrix{
 
         for(int i=0; i<rows; i++){
             for(int j=0; j<columns; j++){
-                values[i][j] = (Math.random()*2)-1; // czy tu musi być taki random?
+                values[i][j] = (Math.random()*2)-1;
             }
         }
     }
