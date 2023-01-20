@@ -54,7 +54,7 @@ public class Matrix{
         }
     }
 
-    Matrix multiply(Matrix X, Matrix Y){
+    static Matrix multiply(Matrix X, Matrix Y){
         Matrix Z = new Matrix(X.rows, Y.columns);
         for(int i=0; i<Z.rows; i++){
             for(int j=0; j<Z.columns; j++){
@@ -68,7 +68,7 @@ public class Matrix{
         return Z;
     }
 
-    Matrix subtract(Matrix X, Matrix Y) {
+    static Matrix subtract(Matrix X, Matrix Y) {
         Matrix Z = new Matrix(X.rows, X.columns);
         for (int i = 0; i < X.rows; i++) {
             for (int j = 0; j < X.columns; j++) {
@@ -78,7 +78,7 @@ public class Matrix{
         return Z;
     }
 
-    Matrix transpose(Matrix X){
+    static Matrix transpose(Matrix X){
         Matrix Z  = new Matrix(X.columns, X.rows);
         for (int i = 0; i < X.rows; i++) {
             for (int j = 0; j < X.columns; j++) {
@@ -117,7 +117,7 @@ public class Matrix{
  	   return X;
     }
     
- 	Matrix fromArray(double[] x)
+ 	static Matrix fromArray(double[] x)
  	{
  		Matrix X = new Matrix(x.length,1);
  		for(int i =0;i<x.length;i++)
