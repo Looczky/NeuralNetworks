@@ -9,7 +9,9 @@ Now we can create a neural Network for example with:
 - 2 input layers
 - 100 hidden layers
 - 1 output layer
+```
 NeuralNetwork neuralNetwork = new NeuralNetwork(2,100,1);
+```
 Train it properly with our inputs and targets for example 50000 times:
 ```
 neuralNetwork.trainOnRandomData(inputs,targets,50000);
