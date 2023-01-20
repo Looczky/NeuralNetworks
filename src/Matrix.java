@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Matrix{
     double[][] values;
     int rows, columns;
@@ -9,7 +12,7 @@ public class Matrix{
 
         for(int i=0; i<rows; i++){
             for(int j=0; j<columns; j++){
-                values[i][j] = (Math.random()*2)-1;
+                values[i][j] = (Math.random()*2)-1; // czy tu musi być taki random?
             }
         }
     }
@@ -93,4 +96,46 @@ public class Matrix{
             System.out.println();
         }
     }
+    
+    
+    void softplus() {
+ 	   for(int i = 0; i < rows; i++) {
+ 		   for (int j = 0; j < columns; j++) {
+ 			   this.values[i][j] = Math.log(1 + Math.exp(this.values[i][j]));
+ 			   
+ 		   }
+ 	   }
+    }
+    
+    Matrix dsoftplus() {
+ 	   Matrix X = new Matrix(rows, columns);
+ 	   for (int i = 0; i < rows; i++) {
+ 		   for (int j = 0; j < columns; j++) {
+ 			   X.values[i][j] =1/(1 + Math.exp(-this.values[i][j]));
+ 		   }
+ 	   }
+ 	   return X;
+    }
+    
+ 	Matrix fromArray(double[] x)
+ 	{
+ 		Matrix X = new Matrix(x.length,1);
+ 		for(int i =0;i<x.length;i++)
+ 			X.values[i][0]=x[i];
+ 		return X;
+ 		
+ 	}
+ 	
+ 	List<Double> toArray() {
+ 		List<Double> X = new ArrayList<Double>();
+ 		
+ 		for(int i = 0; i < rows; i++)
+ 		{
+ 			for(int j = 0; j < columns; j++)
+ 			{
+ 				X.add(values[i][j]);
+ 			}
+ 		}
+ 		return X;
+ 	}
 }
