@@ -6,7 +6,7 @@ public class NeuralNetwork {
     Matrix biasHidden;
     Matrix biasOutput;
 
-    float learningRate = 0.02f;
+    double learningRate = 0.02;
 
     public NeuralNetwork(int input, int hidden, int output) {
         weightsInputHidden = new Matrix(hidden, input);

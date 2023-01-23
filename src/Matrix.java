@@ -117,6 +117,26 @@ public class Matrix{
  	   return X;
     }
     
+    void sigmoid() {
+ 	   for(int i = 0; i < rows; i++) {
+ 		   for (int j = 0; j < columns; j++) {
+ 			   this.values[i][j] = 1 / (1 + Math.exp(-this.values[i][j]));
+ 			
+ 		   }
+ 	   }
+    }
+
+    Matrix dsigmoid() {
+ 	   Matrix X = new Matrix(rows, columns);
+ 	   for (int i = 0; i < rows; i++) {
+ 		   for (int j = 0; j < columns; j++) {
+ 			   X.values[i][j] = (1 / (1 + Math.exp(-this.values[i][j]))) * (1 - 1 / (1 + Math.exp(-this.values[i][j])));
+ 		   }
+ 	   }
+ 	   return X;
+    }
+    
+
  	static Matrix fromArray(double[] x)
  	{
  		Matrix X = new Matrix(x.length,1);
