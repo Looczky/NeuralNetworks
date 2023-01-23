@@ -12,7 +12,7 @@ Now we can create a Neural Network with:
 - 100 hidden layers
 - 1 output layer
 ```
-NeuralNetwork neuralNetwork = new NeuralNetwork(2,100,1);
+NeuralNetwork neuralNetwork = new NeuralNetwork(3,100,1);
 ```
 Train it properly with our inputs and targets for example 50000 times:
 ```
